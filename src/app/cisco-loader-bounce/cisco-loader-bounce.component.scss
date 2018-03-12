@@ -1,0 +1,43 @@
+@keyframes bounce-loading {
+  0%, 100% {
+    transform: translateY(0px);
+    animation-timing-function: ease-out;
+  }
+  50% {
+    transform: translateY(-30px);
+    animation-timing-function: ease-in;
+  }
+}
+
+@mixin bars-bounce {
+  display: inline-block;
+  width: 4px;
+  border-radius: 4px;
+  animation: bounce-loading 1s ease-in-out infinite;
+  background-color: #049FD9;
+  margin-right: 8px;
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+.loading-bar-sm {
+  @include bars-bounce;
+  height: 9px;
+}
+  
+.loading-bar-md {
+  @include bars-bounce;
+  height: 18px;
+}
+  
+.loading-bar-lg {
+  @include bars-bounce;
+  height: 37px;
+  margin-bottom: -5px;
+}

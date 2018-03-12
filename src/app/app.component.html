@@ -1,0 +1,20 @@
+<div class="form-group">
+    <label for="sel1">Select a loader:</label>
+    <select class="form-control" id="sel1" (change)="onLoaderChange($event.target.value)">
+        <option>Alternate</option>
+        <option>Fill</option>
+        <option>Flip</option>
+        <option>Float</option>
+        <option>Turn</option>
+        <option>Bounce</option>
+    </select>
+</div>
+
+<div style="height: 90vh" [ngSwitch]="loader">
+    <cisco-loader-alternate *ngSwitchCase="'Alternate'"></cisco-loader-alternate>
+    <cisco-loader-fill *ngSwitchCase="'Fill'"></cisco-loader-fill>
+    <cisco-loader-flip *ngSwitchCase="'Flip'"></cisco-loader-flip>
+    <cisco-loader-float *ngSwitchCase="'Float'"></cisco-loader-float>
+    <cisco-loader-turn *ngSwitchCase="'Turn'"></cisco-loader-turn>
+    <cisco-loader-bounce *ngSwitchCase="'Bounce'"></cisco-loader-bounce>
+</div>

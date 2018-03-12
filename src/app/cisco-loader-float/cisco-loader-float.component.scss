@@ -1,0 +1,80 @@
+@keyframes float-loading {
+  0% {left: 0%;}
+  75% {left:100%;}
+  100% {left:100%;}
+}
+
+@mixin bars-float {
+  display: inline-block;
+  width: 4px;
+  border-radius: 4px;
+  position: absolute;
+  animation: float-loading 4s infinite cubic-bezier(.2,.64,.81,.23);
+  background-color: #049FD9;
+  margin-right: 8px;
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateX(180deg);
+  overflow:hidden;
+  position: relative;
+}
+  
+.loading-bar-sm {
+  @include bars-float;
+  height: 9px;
+}
+  
+.loading-bar-md {
+  @include bars-float;
+  height: 18px;
+}
+  
+.loading-bar-lg {
+  @include bars-float;
+  height: 37px;
+  margin-bottom: -5px;
+}
+  
+.loader {
+  &:nth-child(1) {
+    animation-delay: 0;
+  }
+
+  &:nth-child(2) {
+    animation-delay: 0.09s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: .18s;
+  }
+
+  &:nth-child(4) {
+    animation-delay: .27s;
+  }
+
+  &:nth-child(5) {
+    animation-delay: .36s;
+  }
+
+  &:nth-child(6) {
+    animation-delay: .45s;
+  }
+
+  &:nth-child(7) {
+    animation-delay: .54s;
+  }
+
+  &:nth-child(8) {
+    animation-delay: .63s;
+  }
+
+  &:nth-child(9) {
+    animation-delay: .72s;
+  }
+}
